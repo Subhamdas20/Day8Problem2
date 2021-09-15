@@ -1,6 +1,6 @@
 package com.bz.linecomparision;
 import java.util.*;
-public class CompareLengthOfTwoLines {
+public class CompareTwoLines {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the value of co-ordinate of  line 1 x1");
@@ -19,14 +19,16 @@ public class CompareLengthOfTwoLines {
         int Y1 = sc.nextInt();
         System.out.println("Enter the value of co-ordinate of Y1 of line 2");
         int Y2 = sc.nextInt();
-        int length_line1 = (int) Math.sqrt((Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2)));
-        int length_line2 =(int) Math.sqrt((Math.pow((X2 - X1), 2) + Math.pow((Y2 - Y1), 2)));
-        System.out.println("Length of line is 1" + " " + length_line1);
-        System.out.println("Length of line is 2" + " " + length_line2);
-        boolean comp = Objects.equals(length_line1, length_line2);
-        if(comp==true)
-            System.out.println("Length of line 1 and 2 is equal");
+        Float lenth_line1 = (float) Math.sqrt((Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2)));
+        Float lenth_line2 = (float) Math.sqrt((Math.pow((X2 - X1), 2) + Math.pow((Y2 - Y1), 2)));
+        System.out.println("Length of line is 1" + " " + lenth_line1);
+        System.out.println("Length of line is 2" + " " + lenth_line2);
+        int compare = lenth_line1.compareTo(lenth_line2);
+        if(compare==0)
+            System.out.println("Length of Line 1 is equal to line 2");
+        else if (lenth_line1>lenth_line2)
+            System.out.println("Length of Line 1 is greater");
         else
-            System.out.println("Length of line 1 and 2 is not equal");
+            System.out.println("Length of Line 2 is greater");
     }
 }
